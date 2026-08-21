@@ -6,7 +6,7 @@ namespace cslt.session03
 {
     internal class ex_2
     {
-        static void Bai_1() 
+    
             static void Main(string[] args)
             {
                 Console.Write("Inpur celsius: ");
@@ -24,5 +24,5 @@ namespace cslt.session03
         
             }
         }
-    }
+   
 
