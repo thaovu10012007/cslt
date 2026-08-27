@@ -82,6 +82,12 @@ namespace cslt.session04
                     Console.WriteLine("Other symbol");
                 }
             }
+            static void giaiPT ()
+            {
+                Console.Write("nhập hệ số a: "); int a = int.Parse(Console.ReadLine());
+                Console.Write("nhập hệ số a: "); int b = int.Parse(Console.ReadLine());
+                Console.Write("nhập hệ số a: "); int c = int.Parse(Console.ReadLine());
+            }
             static void Main(string[] args)
             {
                 Bai_1();

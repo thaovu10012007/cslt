@@ -6,7 +6,7 @@ namespace cslt.session03
 {
     internal class ex_2
     {
-        static void Bai_1 ()
+        static void Bai_1slide ()
         {
        
                 Console.Write("Inpur celsius: ");
@@ -22,7 +22,7 @@ namespace cslt.session03
                     Console.WriteLine("Incorrect, please try again");
                 }
             }
-    static void Bai_2 ()
+    static void Bai_2slide ()
         {
             Console.Write("Input radius: ");
             if (double.TryParse(Console.ReadLine(), out double radius))
@@ -38,7 +38,7 @@ namespace cslt.session03
                 Console.WriteLine("Incorrect, please try again");
             }
         }
-        static void Bai_3 ()
+        static void Bai_3slide ()
         {
             Console.Write("Input a: ");
             double a = double.Parse(Console.ReadLine());
@@ -53,9 +53,9 @@ namespace cslt.session03
         }
             static void Main(string[] args)
             {
-            Bai_1();
-            Bai_2();
-            Bai_3();
+            Bai_1slide();
+            Bai_2slide();
+            Bai_3slide();
             }
         }
     }
