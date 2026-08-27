@@ -90,6 +90,7 @@ namespace cslt.session04
             }
             static void Main(string[] args)
             {
+                Console.OutputEncoding = Encoding.UTF8;
                 Bai_1();
                 Bai_2();
                 Bai_3();

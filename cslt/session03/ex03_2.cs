@@ -233,5 +233,17 @@ namespace cslt.session03
             Console.WriteLine($"Còn {daysUntilNextBirthday} ngay nữa là sinh nhật");
 
         }
+        public static void Main(string[] args)
+        {
+            Console.OutputEncoding = Encoding.UTF8;
+            Bai01();
+            Bai02();
+            Bai04();
+            Bai05();
+            Bai07();
+            Bai11();
+        }
+        
+
     }
 }

@@ -53,6 +53,7 @@ namespace cslt.session03
         }
             static void Main(string[] args)
             {
+            Console.OutputEncoding = Encoding.UTF8;
             Bai_1slide();
             Bai_2slide();
             Bai_3slide();
