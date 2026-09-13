@@ -51,7 +51,7 @@ namespace cslt.session03
             Console.WriteLine($"{a} / {b} = {a / b}");
             Console.WriteLine($"{a} mod {b} = {a % b}");
         }
-            static void Main(string[] args)
+            static void Main2(string[] args)
             {
             Console.OutputEncoding = Encoding.UTF8;
             Bai_1slide();

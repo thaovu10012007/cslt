@@ -233,7 +233,7 @@ namespace cslt.session03
             Console.WriteLine($"Còn {daysUntilNextBirthday} ngay nữa là sinh nhật");
 
         }
-        public static void Main(string[] args)
+        public static void Main3(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
             Bai01();
