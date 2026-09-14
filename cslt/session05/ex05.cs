@@ -126,7 +126,7 @@ namespace cslt.session05
             }
         }
 
-        static void Main( string[] args )
+        static void Main6( string[] args )
         {
             bai1_CheckTriangleType();
             bai2_TongVaTrungBinh10so();
