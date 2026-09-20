@@ -6,454 +6,208 @@ namespace cslt.session06
 {
     internal class ex06
     {
-        static void Bai1TinhTong2SoNguyen()
+        static int TinhTong(int a, int b)
         {
-
-            Console.Write("Nhap a: ");
-            int a = int.Parse(Console.ReadLine());
-
-            Console.Write("Nhap b: ");
-            int b = int.Parse(Console.ReadLine());
-
-            int tong = a + b;
-
-            Console.WriteLine("Tong = " + tong);
+            return a + b;
         }
-        static void Bai2KiemTraChanLe()
+        static bool KiemTraChanLe(int n)
         {
-            Console.Write("Nhap n: ");
-            int n = int.Parse(Console.ReadLine());
-
-            if (n % 2 == 0)
-            {
-                Console.WriteLine(n + " la so chan");
-            }
-            else
-            {
-                Console.WriteLine(n + " la so le");
-            }
+            return n % 2 == 0;
         }
-        static void Bai3TimMax3so()
+        static int TimMax(int a, int b, int c)
         {
-            Console.Write("Nhap a: ");
-            int a = int.Parse(Console.ReadLine());
-
-            Console.Write("Nhap b: ");
-            int b = int.Parse(Console.ReadLine());
-
-            Console.Write("Nhap c: ");
-            int c = int.Parse(Console.ReadLine());
-
-            int max = a;
-
-            if (b > max)
-            {
-                max = b;
-            }
-
-            if (c > max)
-            {
-                max = c;
-            }
-
-            Console.WriteLine("So lon nhat = " + max);
+            return Math.Max(Math.Max(a, b), c);
         }
-        static void Bai4TinhGiaiThua()
+        static long TinhGiaiThua(int n)
         {
-            Console.Write("Nhap n: ");
-            int n = int.Parse(Console.ReadLine());
-
-            if (n < 0)
-            {
-                Console.WriteLine("n phai >= 0");
-                return;
-            }
-
             long result = 1;
-
             for (int i = 1; i <= n; i++)
             {
                 result = result * i;
             }
-
-            Console.WriteLine(n + "! = " + result);
+            return result;
         }
-        static void Bai5DaoNguocChuoi()
+        static string DaoNguocChuoi(string input)
         {
-            Console.Write("Nhap chuoi: ");
-            string input = Console.ReadLine();
-
-            char[] char_array = input.ToCharArray();
-
-            Array.Reverse(char_array);
-
-            string result = new string(char_array);
-
-            Console.WriteLine("Chuoi dao nguoc = " + result);
+            char[] charArray = input.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
         }
-        static void Bai6KiemTraNguyenTo()
+        static bool KiemTraNguyenTo(int n)
         {
-            Console.Write("Nhap n: ");
-            int n = int.Parse(Console.ReadLine());
-
-            bool isPrime = true;
-
             if (n < 2)
             {
-                isPrime = false;
+                return false;
             }
-            else
+            for (int i = 2; i < n; i++)
             {
-                for (int i = 2; i < n; i++)
+                if (n % i == 0)
                 {
-                    if (n % i == 0)
-                    {
-                        isPrime = false;
-                        break;
-                    }
+                    return false;
                 }
             }
-
-            if (isPrime)
-            {
-                Console.WriteLine("True");
-            }
-            else
-            {
-                Console.WriteLine("False");
-            }
+            return true;
         }
-        static void Bai7InFibonacci()
+        static void InFibonacci(int n)
         {
-            Console.Write("Nhap n: ");
-            int n = int.Parse(Console.ReadLine());
-
-            int a = 0;
-            int b = 1;
-
+            if (n <= 0) return;
+            int a = 0, b = 1;
             for (int i = 0; i < n; i++)
             {
                 Console.Write(a + " ");
-
                 int temp = a + b;
                 a = b;
                 b = temp;
             }
-
-            Console.WriteLine();
         }
-        static void Bai8DemNguyenAm()
+        static int DemNguyenAm(string s)
         {
-            Console.Write("Nhap chuoi: ");
-            string s = Console.ReadLine();
-
             int count = 0;
-
-            for (int i = 0; i < s.Length; i++)
+            string na = "aeiouAEIOU";
+            foreach (char c in s)
             {
-                char c = char.ToLower(s[i]);
-
-                if (c == 'a' ||
-                    c == 'e' ||
-                    c == 'i' ||
-                    c == 'o' ||
-                    c == 'u')
-                {
-                    count++;
-                }
+                if (na.Contains(c)) count++;
             }
-
-            Console.WriteLine("So luong nguyen am = " + count);
+            return count;
         }
-        static void Bai9TinhLuyThua()
+        static double TinhLuyThua(double x, int y)
         {
-
-            Console.Write("Nhap x: ");
-            double x = double.Parse(Console.ReadLine());
-
-            Console.Write("Nhap y: ");
-            int y = int.Parse(Console.ReadLine());
-
             double result = 1;
-
-            if (y >= 0)
+            int absy = Math.Abs(y);
+            for (int i = 0; i < absy; i++)
+            { result *= x; }
+            if (y < 0)
             {
-                for (int i = 0; i < y; i++)
-                {
-                    result = result * x;
-                }
+                return 1.0 / result;
             }
-            else
-            {
-                for (int i = 0; i < -y; i++)
-                {
-                    result = result * x;
-                }
-
-                result = 1 / result;
-            }
-
-            Console.WriteLine("Ket qua = " + result);
+            return result;
         }
-        static void Bai10TinhTrungBinh()
+        static double TinhTrungBinh(int[] arr)
         {
-            Console.Write("Nhap so luong phan tu: ");
-            int n = int.Parse(Console.ReadLine());
-
-            int[] arr = new int[n];
-
+            if (arr == null || arr.Length == 0) return 0;
             int sum = 0;
-
-            for (int i = 0; i < n; i++)
+            foreach (int item in arr)
             {
-                Console.Write("Nhap arr[" + i + "]: ");
-                arr[i] = int.Parse(Console.ReadLine());
-
-                sum = sum + arr[i];
+                sum += item;
             }
-
-            double average = (double)sum / n;
-
-            Console.WriteLine("Trung binh = " + average);
+            return (double)sum / arr.Length;
         }
-        static void Bai11KiemTraDoiXung()
+        static bool KiemTraDoiXung(string s)
         {
-            Console.Write("Nhap chuoi: ");
-            string s = Console.ReadLine();
-
-            string reverse = "";
-
-            for (int i = s.Length - 1; i >= 0; i--)
+            int left = 0;
+            int right = s.Length - 1;
+            while (left < right)
             {
-                reverse += s[i];
+                if (char.ToLower(s[left]) != char.ToLower(s[right])) return false;
+                left++;
+                right--;
             }
-
-            if (s == reverse)
-            {
-                Console.WriteLine("True");
-            }
-            else
-            {
-                Console.WriteLine("False");
-            }
+            return true;
         }
-        static void Bai12CelsiusToFahrenheit()
+        static double CelsiusToFahrenheit(double c)
         {
-            Console.Write("Nhap do C: ");
-            double c = double.Parse(Console.ReadLine());
-
-            double f = c * 9 / 5 + 32;
-
-            Console.WriteLine("Do F = " + f);
+            return (c * 9 / 5) + 32;
         }
-        static void Bai13TimMin()
+        static int TimMin(int[] arr)
         {
-            Console.Write("Nhap so luong phan tu: ");
-            int n = int.Parse(Console.ReadLine());
-
-            int[] arr = new int[n];
-
-            for (int i = 0; i < n; i++)
-            {
-                Console.Write("Nhap arr[" + i + "]: ");
-                arr[i] = int.Parse(Console.ReadLine());
-            }
-
             int min = arr[0];
-
-            for (int i = 1; i < n; i++)
+            for (int i = 1; i < arr.Length; i++)
             {
-                if (arr[i] < min)
-                {
-                    min = arr[i];
-                }
+                if (arr[i] < min) min = arr[i];
             }
-
-            Console.WriteLine("Gia tri nho nhat = " + min);
+            return min;
         }
-        static void Bai14TongCacChuSo()
+        static int TongCacChuSo(int n)
         {
-            Console.Write("Nhap so nguyen: ");
-            int n = int.Parse(Console.ReadLine());
-
             n = Math.Abs(n);
-
             int sum = 0;
-
             while (n > 0)
             {
                 sum += n % 10;
                 n /= 10;
             }
-
-            Console.WriteLine("Tong cac chu so = " + sum);
+            return sum;
         }
-        static void Bai15SapXepMangTangDan()
+        static void SapXepMang(int[] arr)
         {
-            Console.Write("Nhap so luong phan tu: ");
-            int n = int.Parse(Console.ReadLine());
-
-            int[] arr = new int[n];
-
-            for (int i = 0; i < n; i++)
+            Array.Sort(arr);
+            foreach (int item in arr)
             {
-                Console.Write("Nhap arr[" + i + "]: ");
-                arr[i] = int.Parse(Console.ReadLine());
+                Console.Write(item + " ");
             }
-            for (int i = 0; i < n - 1; i++)//sap xep tang dan
-            {
-                for (int j = i + 1; j < n; j++)
-                {
-                    if (arr[i] > arr[j])
-                    {
-                        int temp = arr[i];
-                        arr[i] = arr[j];
-                        arr[j] = temp;
-                    }
-                }
-            }
-
-            Console.Write("Mang tang dan: ");
-
-            for (int i = 0; i < n; i++)
-            {
-                Console.Write(arr[i] + " ");
-            }
-
             Console.WriteLine();
         }
-        static void Bai16XoaKiTuTrungLap()
+        static string XoaTrungLap(string s)
         {
-            Console.Write("Nhap chuoi: ");
-            string s = Console.ReadLine();
-
-            string result = "";
-
-            for (int i = 0; i < s.Length; i++)
+            StringBuilder result = new StringBuilder();
+            foreach (char c in s)
             {
-                bool trung = false;
-
-                for (int j = 0; j < result.Length; j++)
+                if (!result.ToString().Contains(c))
                 {
-                    if (s[i] == result[j])
-                    {
-                        trung = true;
-                        break;
-                    }
-                }
-
-                if (!trung)
-                {
-                    result += s[i];
+                    result.Append(c);
                 }
             }
-
-            Console.WriteLine("Chuoi sau khi xoa trung lap = " + result);
+            return result.ToString();
         }
-        static void Bai17UocChungLonNhat()
+        static int UCLN(int a, int b)
         {
-            Console.Write("Nhap a: ");
-            int a = int.Parse(Console.ReadLine());
-
-            Console.Write("Nhap b: ");
-            int b = int.Parse(Console.ReadLine());
-
             a = Math.Abs(a);
             b = Math.Abs(b);
-
-            // Thuat toan Euclid
             while (b != 0)
             {
-                int temp = a % b;
-                a = b;
-                b = temp;
+                int temp = b;
+                b = a % b;
+                a = temp;
             }
-
-            Console.WriteLine("UCLN = " + a);
+            return a;
         }
-        static void Bai18DecimalToBinary()
+        static string DecimalToBinary(int n)
         {
-            Console.Write("Nhap so thap phan: ");
-            int n = int.Parse(Console.ReadLine());
-
-            if (n == 0)
-            {
-                Console.WriteLine("Nhi phan = 0");
-                return;
-            }
-
+            if (n == 0) return "0";
             string binary = "";
-
             while (n > 0)
             {
-                int du = n % 2;
-
-                binary = du + binary;
-
+                binary = (n % 2) + binary;
                 n /= 2;
             }
-
-            Console.WriteLine("Nhi phan = " + binary);
+            return binary;
         }
-        static void Bai19KiemTraNamNhuan()
+        static bool KiemTraNamNhuan(int year)
         {
-            Console.Write("Nhap nam: ");
-            int year = int.Parse(Console.ReadLine());
-
-            bool leapYear = false;
-
-            if (year % 400 == 0)
-            {
-                leapYear = true;
-            }
-            else if (year % 100 == 0)
-            {
-                leapYear = false;
-            }
-            else if (year % 4 == 0)
-            {
-                leapYear = true;
-            }
-
-            Console.WriteLine(leapYear);
+            return (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0);
         }
-        static void Bai20DemSoTu()
+        static int DemSoTu(string sentence)
         {
-            Console.Write("Nhap cau: ");
-            string sentence = Console.ReadLine();
-
-            string[] words = sentence.Split(
-                new char[] { ' ', '\t' },
-                StringSplitOptions.RemoveEmptyEntries
-            );
-
-            Console.WriteLine("So tu = " + words.Length);
+            if (string.IsNullOrWhiteSpace(sentence)) return 0;
+            string[] words = sentence.Trim().Split(new char[] { ' ', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            return words.Length;
         }
-
-        static void Main7(string[] args)
+        static void Main(string[] args)
         {
-            Bai1TinhTong2SoNguyen();
-            Bai2KiemTraChanLe();
-            Bai3TimMax3so();
-            Bai4TinhGiaiThua();
-            Bai5DaoNguocChuoi();
-            Bai6KiemTraNguyenTo();
-            Bai7InFibonacci();
-            Bai8()DemNguyenAm;
-            Bai9()TinhLuyThua;
-            Bai10()TinhTrungBinh;
-            Bai11KiemTraDoiXung();
-            Bai12CelsiusToFahrenheit();
-            Bai13TimMin();
-            Bai14TongCacChuSo();
-            Bai15SapXepMangTangDan();
-            Bai16XoaKiTuTrungLap();
-            Bai17UocChungLonNhat();
-            Bai18DecimalToBinary();
-            Bai19KiemTraNamNhuan();
-            Bai20DemSoTu();
-
+            Console.OutputEncoding = Encoding.UTF8;
+            Console.WriteLine($"Tổng 3 + 6 = {TinhTong(3, 6)}");
+            Console.WriteLine($"4 là số chẵn? {KiemTraChan(4)}");
+            Console.WriteLine($"Max(4, 10, 7) = {TimMax(4, 10, 7)}");
+            Console.WriteLine($"4! = {TinhGiaiThua(4)}");
+            Console.WriteLine($"Đảo ngược 'Thao' = {DaoNguocChuoi("Thao")}");
+            Console.WriteLine($"7 là số nguyên tố? {KiemTraNguyenTo(7)} | 10 là số nguyên tố? {KiemTraNguyenTo(10)}");
+            Console.Write("In 6 số Fibonacci đầu tiên: ");
+            InFibonacci(6);
+            Console.WriteLine($"Số nguyên âm trong 'ThanhThao' = {DemNguyenAm("ThanhThao")}");
+            Console.WriteLine($"4^6 = {TinhLuyThua(4, 6)}");
+            Console.WriteLine($"Trung bình [2, 4, 7] = {TinhTrungBinh(new int[] { 2, 4, 7 })}");
+            Console.WriteLine($"'radar'có đối xứng không? {KiemTraDoiXung("radar")} | 'hello' có đối xứng không? {KiemTraDoiXung("hello")}");
+            Console.WriteLine($"25°C = {CelsiusToFahrenheit(25)}F");
+            Console.WriteLine($"Giá trị nhỏ nhất trong [2, 3, 5, 9, 7] = {TimMin(new int[] { 2, 3, 5, 9, 7 })}");
+            Console.WriteLine($"Tổng chữ số của 123 = {TongCacChuSo(123)}");
+            Console.Write("Sắp xếp [7, 1, 6, 3] = ");
+            SapXepMang(new int[] { 7, 1, 6, 3 });
+            Console.WriteLine($"Xóa trùng 'hochanh' = {XoaTrungLap("hochanh")}");
+            Console.WriteLine($"(6, 18) = {UCLN(12, 18)}");
+            Console.WriteLine($"10 sang nhị phân = {DecimalToBinary(10)}");
+            Console.WriteLine($"Năm 2024 có phải năm nhuận? {KiemTraNamNhuan(2024)} | Năm 2023 có phải năm nhuận? {KiemTraNamNhuan(2023)}");
+            Console.WriteLine($"Số từ trong 'Viet Nam' = {DemSoTu("Viet Nam")}");
+            Console.ReadLine();
         }
-
     }
 }
