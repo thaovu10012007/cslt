@@ -56,8 +56,8 @@ namespace cslt.session03
             CultureInfo cul = new CultureInfo("vi-VN");
             Console.WriteLine($"\nSo dien tieu thu: {so_dien} kWh");
             Console.WriteLine($"Tien dien chua thue: {tiendien:N0} VNĐ");
-            Console.WriteLine($"Thue VAT (8%): {thueVAT} VNĐ");
-            Console.WriteLine($"Tong thanh toan: {tongThanhToan} VNĐ");
+            Console.WriteLine($"Thue VAT (8%): {thueVAT:NO} VNĐ");
+            Console.WriteLine($"Tong thanh toan: {tongThanhToan:NO} VNĐ");
         }
         static void Bai02()
         {
