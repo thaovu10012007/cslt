@@ -61,7 +61,7 @@ namespace cslt.session03
         }
         static void Bai02()
         {
-            Console.Write("\n\nNhap chieu cao (met): ");
+            Console.Write("Nhap chieu cao (met): ");
             double chieucao = double.Parse(Console.ReadLine());
             Console.Write("Nhap can nang (kg): ");
             double cannang = double.Parse(Console.ReadLine());
@@ -80,9 +80,15 @@ namespace cslt.session03
             else
                 capdo = "Béo phì";
 
+            // Tính dải cân nặng lý tưởng
+            double canNangToiThieu = 18.5 * chieucao * chieucao;
+            double canNangToiDa = 22.9 * chieucao * chieucao;
+
+
             // In kết quả
             Console.WriteLine($"Chi so BMI: {bmi:F2}");
             Console.WriteLine($"Phan loai suc khoe: {capdo}");
+            Console.WriteLine($"Can nang ly tuong: {canNangToiThieu:F2} kg - {canNangToiDa:F2} kg");
         }
         static void Bai05()
         {
@@ -243,7 +249,5 @@ namespace cslt.session03
             Bai07();
             Bai11();
         }
-        
-
     }
 }

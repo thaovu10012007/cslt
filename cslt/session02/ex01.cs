@@ -24,14 +24,16 @@ namespace cslt.session02
             int c = a;
             a = b;
             b = c;
-            Console.WriteLine($"After swapping:a={a} , b={b}\n");
+            Console.WriteLine("After swapping:");
+            Console.WriteLine($"a = {a}");
+            Console.WriteLine($"b = {b}");
 
             //3.To multiply two floating point numbers 
             Console.Write("Enter a floating number: ");
             float f1 = Convert.ToSingle(Console.ReadLine());
             Console.Write("Enter a second floating number: ");
             float f2 = Convert.ToSingle(Console.ReadLine());
-            Console.WriteLine($"the answer is: {f1 + f2}\n");
+            Console.WriteLine($"the answer is: {f1 * f2}");
 
             //4.To convert feet to meter
             Console.WriteLine("Enter distance in feet: ");
@@ -50,9 +52,10 @@ namespace cslt.session02
             Console.WriteLine($"Size of int data type is {sizeof(int)}");
 
             //7. to Print ASCII Value (tip: read character, print number of this char)
-            Console.Write("Enter a character:");
-            int ch = Console.Read();
-            Console.WriteLine($"ASCII code of {(char)c} is {ch}");
+            Console.Write("Enter a character: ");
+            char character = char.Parse(Console.ReadLine());
+            Console.WriteLine($"ASCII code of {character} is {(int)character}");
+
 
             //8. to Calculate Area of Circle
             double r = 5.1;
