@@ -24,7 +24,7 @@ namespace cslt.session02
             int c = a;
             a = b;
             b = c;
-            Console.WriteLine($"After swapping:a={a} , b={b}/n");
+            Console.WriteLine($"After swapping:a={a} , b={b}\n");
 
             //3.To multiply two floating point numbers 
             Console.Write("Enter a floating number: ");
