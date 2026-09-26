@@ -10,7 +10,7 @@ namespace cslt.session06
         {
             return a + b;
         }
-        static bool KiemTraChanLe(int n)
+        static bool KiemTraChan(int n)
         {
             return n % 2 == 0;
         }
@@ -203,7 +203,7 @@ namespace cslt.session06
             Console.Write("Sắp xếp [7, 1, 6, 3] = ");
             SapXepMang(new int[] { 7, 1, 6, 3 });
             Console.WriteLine($"Xóa trùng 'hochanh' = {XoaTrungLap("hochanh")}");
-            Console.WriteLine($"(6, 18) = {UCLN(12, 18)}");
+            Console.WriteLine($"(12, 18) = {UCLN(12, 18)}");
             Console.WriteLine($"10 sang nhị phân = {DecimalToBinary(10)}");
             Console.WriteLine($"Năm 2024 có phải năm nhuận? {KiemTraNamNhuan(2024)} | Năm 2023 có phải năm nhuận? {KiemTraNamNhuan(2023)}");
             Console.WriteLine($"Số từ trong 'Viet Nam' = {DemSoTu("Viet Nam")}");
